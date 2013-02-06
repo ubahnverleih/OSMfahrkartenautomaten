@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<title>Unvollst&auml;ndige Adressen in OSM</title>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="leaflet/leaflet.css" />
@@ -29,13 +30,24 @@
 			function XMLLaden(lat1,lon1,lat2,lon2)
 			{
 				//Maximalen Zoom um karten ausschnitt nciht zu gross zu haben
-				if (map.getZoom()>13)
+				if(!$("#onlystreet").attr("checked")){
+					minzoom = 14;
+				}
+				else {
+					minzoom = 12;
+				}
+				if (map.getZoom()>=minzoom)
 				{
 					$('#zoomwarnung').hide(0.4);
 					$('#loading').show().effect("highlight", {}, 700);
 					loadingcounter++;
 					//CrossoverAPI XML request
-					XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:city" modv="not" regv="."/>       <bbox-query  into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:postcode" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union> 	 <print from="_" limit="" mode="body" order="id"/>      <union ><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:postcode" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query> <recurse type="down"/><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>   <query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:city" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query>   <recurse type="down"/> </union> 	<print /> </osm-script>';
+					if (!$("#onlystreet").attr("checked")){
+						XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:city" modv="not" regv="."/>       <bbox-query  into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:postcode" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union> 	 <print from="_" limit="" mode="body" order="id"/>      <union ><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:postcode" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query> <recurse type="down"/><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>   <query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:city" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query>   <recurse type="down"/> </union> 	<print /> </osm-script>';
+					}
+					else {
+						XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union> <union><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>    <recurse type="down"/> </union> 	<print /> </osm-script>';
+					}
 					//URL Codieren
 					XMLRequestText = encodeURIComponent(XMLRequestText);
 					
@@ -289,11 +301,17 @@
 			#zoomwarnung {width: 200px; margin-left: -100px; background-color: yellow; position: absolute; top: 16px; margin-top: 0px; height: 47px; left: 50%; text-align: center; font-size: 16; font-family: sans-serif; opacity: 0.8; border-radius: 5px;}
 
 			#loading { background-color: white; position: absolute; top: 16px; margin-top: 0px; left: 50px; text-align: center; font-size: 16; font-family: sans-serif; border-radius: 5px; padding: 10px}
+			#options { background-color: white; position: absolute; bottom: 16px; margin-top: 0px; left: 16px; text-align: center; font-family: sans-serif; border-radius: 5px; padding: 10px}
 		</style>	
 		<div id="zoomwarnung">
 			<p>Zoom in to load Data</p>
 		</div>
 		<div id="loading"><img src="./img/ajax-loader.gif"></div>
+
+		<div id="options">
+			<input type="checkbox" id="onlystreet" onChange="Moveaufruf()"/> <label for="onlystreet">Nur fehlendes <i>addr:street</i> anzeigen</label><br><br>
+			<small><a target="_new" href="./about.html">über diese Karte</a> | <a href="" target="_new">Flattr</a></small>
+		</div>
 
 	</body>
 </html>
