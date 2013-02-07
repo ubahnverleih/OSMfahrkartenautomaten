@@ -2,7 +2,7 @@
 
 [Diese Karte](./) zeigt unvollständige Adressen in [Openstreetmap](http://osm.org). Objekte werden angezeigt, wenn Eine Hausnummer vorhanden ist, aber keine Straße, Postleitzahl oder Stadt. Adressen bei denen die Straße fehlt, werden mit einem roten Pin gekennzeichnet. Zur besseren Übersicht kann die Option aktiviert werden, dass nur Objekte mit fehlenden addr:street Tags angezeigt werden.
 
-Da es vorallem in Städten sehr viele Treffer gibt, habe ich das herauszoomen begrenzt, da es sonst passieren kann, dass so viele Pins angezeigt werden, dass Browser abstürzen. Bei der aktiviertem _Nur fehlendes addr:street anzeigen_ kann zwei mal weiter herausgezoomt werden und weiterhin neue Daten geladen werden.
+Da es vorallem in Städten sehr viele Treffer gibt, habe ich das herauszoomen begrenzt, da es sonst passieren kann, dass so viele Pins angezeigt werden, dass Browser abstürzen. Bei der aktiviertem _Nur fehlendes addr:street anzeigen_ kann zwei mal weiter herausgezoomt werden und weiterhin neue Daten geladen werden. 
 
 ## Relationen
 Relationen mit fehlenden Hausnummern werden momentan nicht angezeigt. Sorry.
