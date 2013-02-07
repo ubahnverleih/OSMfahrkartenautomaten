@@ -238,13 +238,11 @@
     		
     		
     		
-    		mapInit(-10000,-10000);
+    		mapInit();
     		if(geo_position_js.init()){
 				geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true,options:5000});
 			}
-			else{
-				//mapInit(-10000,-10000);
-			}
+			
 	
 			function success_callback(p)
 			{
@@ -264,16 +262,11 @@
     		
     		
     		
-    		function mapInit(lat,lon)
+    		function mapInit()
     		{
-	    		if (lat > -10000)
-	    		{
-	    			var ort = new L.LatLng(lat, lon); // geographical point (longitude and latitude)
-	    		}
-	    		else
-	    		{
+	    		
 	    			var ort = new L.LatLng(51.07, 13.73); // geographical point (longitude and latitude)
-	    		}
+	    		
 				map.setView(ort, 16).addLayer(cloudmade);
 				map.on('moveend',function(){Moveaufruf();});
 				loadingcounter = 0;
