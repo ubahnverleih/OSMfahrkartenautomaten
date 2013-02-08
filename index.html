@@ -18,9 +18,6 @@
 			
 			function Moveaufruf()
 			{
-				
-				
-
 				coords = map.getBounds();
 				lefttop = coords.getNorthWest();
 				rightbottom = coords.getSouthEast();
@@ -125,13 +122,8 @@
 
 
 
-
-
-
-					/*EleLat = $(this).attr("lat");
-					EleLon = $(this).attr("lon");*/
 					
-					EleText = "";
+					var EleText = "";
 					var hausnummer = "";
 					var stadt = "";
 					var plz = "";
@@ -167,13 +159,9 @@
 					});
 
 
-					/*coords = map.getBounds();
-					lefttop = coords.getNorthWest();
-					rightbottom = coords.getSouthEast();
-					XMLLaden(lefttop.lat,lefttop.lng,rightbottom.lat,rightbottom.lng);*/
+					
 
 					if (hausnummer!=""){
-					//if (hausnummer=="") hausnummer = "<i><b>fehlt</i></b>";
 						if (stadt=="") stadt = "<i><b>fehlt</i></b>";
 						if (strasse==""){
 							strasse = "<i><b>fehlt</i></b>";
@@ -194,7 +182,6 @@
 								popupAnchor:  [0, -42]
 							});
 							var marker = new L.Marker(markerLocation,{icon : Icon});
-							//var marker = new L.Marker(markerLocation);
 							
 							if(EleText!="")
 							{
@@ -203,7 +190,6 @@
 							
 							Layergroup.addLayer(marker);
 
-							//map.addLayer(marker);
 							MarkerArray.push(EleID);
 
 						}
@@ -228,10 +214,10 @@
 		
 	</head>
 	<body style="margin:0px">
-		<div id="map" style="height: 100%;"></div> <!-- width equals available horizontal space by default -->
+		<div id="map" style="height: 100%;"></div>
 		<script>
 			var map = new L.Map('map');
-			var cloudmadeUrl = 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			var cloudmadeUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     			cloudmadeAttrib = 'Map data &copy; 2013 OpenStreetMap contributors, Data via <a href="http://www.overpass-api.de/">Overpass API</a>',
     			cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
     			
@@ -246,8 +232,6 @@
 	
 			function success_callback(p)
 			{
-				//alert('lat='+p.coords.latitude.toFixed(2)+';lon='+p.coords.longitude.toFixed(2));
-				//mapInit( p.coords.latitude.toFixed(5) , p.coords.longitude.toFixed(5) );
 				var ort = new L.LatLng(p.coords.latitude.toFixed(5), p.coords.longitude.toFixed(5) );
 				map.setView(ort, 16);
 
@@ -255,7 +239,7 @@
 			
 			function error_callback(p)
 			{
-				//mapInit(-10000,-10000);
+				console.log("keine position");
 			}
     		
     		
@@ -273,13 +257,7 @@
 				Moveaufruf();
 			}
 			
-			/*var markerLocation = new L.LatLng(51.6, -0.09);
-			var marker = new L.Marker(markerLocation);
-			map.addLayer(marker);
-
-			var markerLocation = new L.LatLng(51.5, -0.18);
-			var marker = new L.Marker(markerLocation);
-			map.addLayer(marker);*/
+			
 
 
 			function openinJOSM(type, ID){
