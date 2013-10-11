@@ -165,6 +165,14 @@
 						{
 							payment_notes = EleValue;
 						}
+						if ((EleKey=="payment:ep_geldkarte"))
+						{
+							payment_ep_geldkarte = EleValue;
+						}
+						if ((EleKey=="payment:account_cards"))
+						{
+							payment_account_cards = EleValue;
+						}
 						if ((EleKey=="note"))
 						{
 							note = EleValue;
@@ -178,7 +186,7 @@
 						if (operator=="") operator = "<i><b>fehlt</i></b>";
 						if (payment_coins=="") payment_coins = "<i><b>fehlt</i></b>"; 
 						if (payment_notes=="") payment_notes = "<i><b>fehlt</i></b>";
-						if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
+						//if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
 						if (ref=="") ref = "<i><b>fehlt</i></b>";
 						
 						EleText = 
@@ -187,7 +195,10 @@
 							"<div class='infoblock'><table>" + 
 							"<tr><td>Münzen: </td><td>" + payment_coins + "</td></tr>" + 
 							"<tr><td>Scheine: </td><td>" + payment_notes + "</td></tr>" + 
-							"<tr><td>Elektronische: </td><td>" + payment_electronic_purses + "</td></tr>" + 
+							
+							"<tr><td>GeldKarte: </td><td>" + payment_ep_geldkarte + "</td></tr>" + 
+							"<tr><td>Kundenkarten: </td><td>" + payment_account_cards + "</td></tr>" + 
+							"<tr><td>Karte: </td><td>" + payment_electronic_purses + "</td></tr>" + 
 							
 							"</table></div>" + 
 							"<div class='infoblock'><table>" + 
