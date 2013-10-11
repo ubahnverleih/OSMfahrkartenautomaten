@@ -41,7 +41,7 @@
 					loadingcounter++;
 					//CrossoverAPI XML request
 					if (!$("#onlystreet").attr("checked")){
-						XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:city" modv="not" regv="."/>       <bbox-query  into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union>   <union into="_">     <query into="_" type="node">       <has-kv k="addr:housenumber" modv="" v=""/>       <has-kv k="addr:postcode" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union> 	 <print from="_" limit="" mode="body" order="id"/>      <union ><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:postcode" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query> <recurse type="down"/><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>   <query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:city" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query>   <recurse type="down"/> </union> 	<print /> </osm-script>';
+						XMLRequestText = '( node ["vending"="public_transport_tickets"] ( '+lat2+','+lon1+','+lat1+','+lon2+ ' ); >; ); out;';
 					}
 					else {
 						XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union><print /> <union><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>    <recurse type="down"/> </union> 	<print /> </osm-script>';
@@ -125,52 +125,60 @@
 
 					
 					var EleText = "";
-					var hausnummer = "";
-					var stadt = "";
-					var plz = "";
-					var strasse = "";
-					var land = "";
+					var amenity = "";
+					var operator = "";
+					var ref = "";
+					var payment_coins = "";
+					var payment_electronic_purses = "";
+					var payment_notes = "";
+					var note = "";
 					var costommarker = "";
 					
 					$(this).find('tag').each(function(){
 						EleKey = $(this).attr("k");
 						EleValue = $(this).attr("v");
 						//EleText = EleText + "<b>" + EleKey + ": </b>" + EleValue + "<br/>";
-						if ((EleKey=="addr:housenumber"))
+						if ((EleKey=="amenity"))
 						{
-							hausnummer = EleValue;
+							amenity = EleValue;
 						}
-						if ((EleKey=="addr:street"))
+						if ((EleKey=="operator"))
 						{
-							strasse = EleValue;
+							operator = EleValue;
 						}
-						if ((EleKey=="addr:country"))
+						if ((EleKey=="ref"))
 						{
-							land = EleValue;
+							ref = EleValue;
 						}
-						if ((EleKey=="addr:city"))
+						if ((EleKey=="payment:coins"))
 						{
-							stadt = EleValue;
+							payment_coins = EleValue;
 						}
-						if ((EleKey=="addr:postcode"))
+						if ((EleKey=="payment:electronic_purses"))
 						{
-							plz = EleValue;
+							payment_electronic_purses = EleValue;
+						}
+						if ((EleKey=="payment:notes"))
+						{
+							payment_notes = EleValue;
+						}
+						if ((EleKey=="note"))
+						{
+							note = EleValue;
 						}
 						
 					});
 
 
 					
-
-					if (hausnummer!=""){
-						if (stadt=="") stadt = "<i><b>fehlt</i></b>";
-						if (strasse==""){
-							strasse = "<i><b>fehlt</i></b>";
-							costommarker = "red"; 
-						} 
-						if (plz=="") plz = "<i><b>fehlt</i></b>";
-						if (land=="") land = "<i><b>fehlt</i></b>";
-						EleText = "Hausnummer: " + hausnummer + "<br>Straße: " + strasse + "<br> Postleitzahl: " + plz + "<br> Stadt: " + stadt + "<br>Land: " + land + "<br><br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>";
+					if (amenity!=""){
+						if (operator=="") operator = "<i><b>fehlt</i></b>";
+						if (payment_coins=="") payment_coins = "<i><b>fehlt</i></b>"; 
+						if (payment_notes=="") payment_notes = "<i><b>fehlt</i></b>";
+						if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
+						if (ref=="") ref = "<i><b>fehlt</i></b>";
+						
+						EleText = "Betreiber: " + operator + "<br>Münzen: " + payment_coins + "<br> Scheine: " + payment_notes + "<br> Elektronische: " + payment_electronic_purses + "<br>Ref: " + ref + "<br><br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>";
 
 						
 						if($.inArray(EleID, MarkerArray)==-1)
@@ -188,7 +196,6 @@
 							{
 								marker.bindPopup(EleText);
 							}
-							
 							Layergroup.addLayer(marker);
 
 							MarkerArray.push(EleID);
