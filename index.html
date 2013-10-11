@@ -28,25 +28,19 @@
 			
 			function XMLLaden(lat1,lon1,lat2,lon2)
 			{
-				//Maximalen Zoom um karten ausschnitt nciht zu gross zu haben
-				if(!$("#onlystreet").attr("checked")){
-					minzoom = 14;
-				}
-				else {
-					minzoom = 12;
-				}
+				//Maximalen Zoom um karten ausschnitt nicht zu gross zu haben
+				minzoom = 12;
+				
 				if (map.getZoom()>=minzoom)
 				{
 					$('#zoomwarnung').hide(0.4);
 					$('#loading').show().effect("highlight", {}, 700);
 					loadingcounter++;
 					//CrossoverAPI XML request
-					if (!$("#onlystreet").attr("checked")){
-						XMLRequestText = '( node ["vending"="public_transport_tickets"] ( '+lat2+','+lon1+','+lat1+','+lon2+ ' ); >; ); out;';
-					}
-					else {
-						XMLRequestText = '<osm-script><union into="_"><query into="_" type="node"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/>       <bbox-query into="_" s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/>     </query>   </union><print /> <union><query  type="way"><has-kv k="addr:housenumber" modv="" v=""/><has-kv k="addr:street" modv="not" regv="."/><bbox-query s="'+lat2+'" n="'+lat1+'" w="'+lon1+'" e="'+lon2+'"/></query><recurse type="down"/>    <recurse type="down"/> </union> 	<print /> </osm-script>';
-					}
+
+					XMLRequestText = '( node ["vending"="public_transport_tickets"] ( '+lat2+','+lon1+','+lat1+','+lon2+ ' ); >; ); out;';
+					
+					
 					//URL Codieren
 					XMLRequestText = encodeURIComponent(XMLRequestText);
 					
@@ -60,8 +54,7 @@
 					crossDomain: true,
 					success: function(data){parseOSM(data);}
 					//beforeSend: setHeader
-					});
-						
+					});			
 						
 				}
 				
@@ -195,7 +188,7 @@
 							"<div class='infoblock'><table>" + 
 							"<tr><td>Münzen: </td><td>" + payment_coins + "</td></tr>" + 
 							"<tr><td>Scheine: </td><td>" + payment_notes + "</td></tr>" + 
-							
+
 							"<tr><td>GeldKarte: </td><td>" + payment_ep_geldkarte + "</td></tr>" + 
 							"<tr><td>Kundenkarten: </td><td>" + payment_account_cards + "</td></tr>" + 
 							"<tr><td>Karte: </td><td>" + payment_electronic_purses + "</td></tr>" + 
@@ -335,7 +328,6 @@
 		<div id="loading"><img src="./img/ajax-loader.gif"></div>
 
 		<div id="options">
-			<input type="checkbox" id="onlystreet" onChange="Moveaufruf()"/> <label for="onlystreet">Nur fehlendes <i>addr:street</i> anzeigen</label><br><br>
 			<small><a target="_new" href="./about.html">über diese Karte</a> | <a href="http://flattr.com/thing/1124881/Unvollstndige-Adressen-in-OSM" target="_new">Flattr</a></small>
 		</div>
 
