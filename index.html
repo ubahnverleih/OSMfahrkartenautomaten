@@ -4,6 +4,7 @@
 		<title>Unvollst&auml;ndige Adressen in OSM</title>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="leaflet/leaflet.css" />
+		<link rel="stylesheet" href="style.css" />
 		<script src="leaflet/leaflet.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -131,6 +132,8 @@
 					var payment_coins = "";
 					var payment_electronic_purses = "";
 					var payment_notes = "";
+					var payment_ep_geldkarte = "";
+					var payment_account_cards = "";
 					var note = "";
 					var costommarker = "";
 					
@@ -178,7 +181,21 @@
 						if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
 						if (ref=="") ref = "<i><b>fehlt</i></b>";
 						
-						EleText = "Betreiber: " + operator + "<br>Münzen: " + payment_coins + "<br> Scheine: " + payment_notes + "<br> Elektronische: " + payment_electronic_purses + "<br>Ref: " + ref + "<br><br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>";
+						EleText = 
+							"<b>Betreiber: " + operator + "</b><br>" + 
+							"<small>Zahlungsmöglichkeiten</small>" + 
+							"<div class='infoblock'><table>" + 
+							"<tr><td>Münzen: </td><td>" + payment_coins + "</td></tr>" + 
+							"<tr><td>Scheine: </td><td>" + payment_notes + "</td></tr>" + 
+							"<tr><td>Elektronische: </td><td>" + payment_electronic_purses + "</td></tr>" + 
+							
+							"</table></div>" + 
+							"<div class='infoblock'><table>" + 
+							"<tr><td>Ref: </td><td>" + ref + "</td></tr>" + 
+							"<tr><td>Notiz: </td><td>" + note + "</td></tr>" + 
+							"</table></div>" + 
+							"<br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>" 
+							;
 
 						
 						if($.inArray(EleID, MarkerArray)==-1)

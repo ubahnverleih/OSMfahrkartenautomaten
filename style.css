@@ -1,0 +1,15 @@
+.infoblock td {
+font: 12px/1.4 "Helvetica Neue", Arial, Helvetica, sans-serif; vertical-align: top; margin-bottom: 4;}
+
+.infoblock {
+	background-color: #EEEEEE;
+	border: 1px solid silver;
+	margin-left: -5px;
+	margin-right: -5px;
+	margin-top: 6px;
+	min-width: 200px;
+	border-radius: 3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 5px;
+}
