@@ -179,6 +179,14 @@
 						if (operator=="") operator = "<i><b>fehlt</i></b>";
 						if (payment_coins=="") payment_coins = "<i><b>fehlt</i></b>"; 
 						if (payment_notes=="") payment_notes = "<i><b>fehlt</i></b>";
+
+						//Dinge die nur angezeigt werden, wenn sie getaggt sind:
+						if (payment_ep_geldkarte!="") payment_ep_geldkarte = "<tr><td>GeldKarte: </td><td>" + payment_ep_geldkarte + "</td></tr>";
+						if (payment_account_cards!="") payment_account_cards = "<tr><td>(Geld)Karte: </td><td>" + payment_account_cards + "</td></tr>";
+						if (payment_electronic_purses!="") payment_electronic_purses = "<tr><td>Kundenkarte: </td><td>" + payment_electronic_purses + "</td></tr>";
+
+						if (note!="") note = "<tr><td>Notiz: </td><td>" + note + "</td></tr>";
+
 						//if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
 						if (ref=="") ref = "<i><b>fehlt</i></b>";
 						
@@ -189,14 +197,14 @@
 							"<tr><td>Münzen: </td><td>" + payment_coins + "</td></tr>" + 
 							"<tr><td>Scheine: </td><td>" + payment_notes + "</td></tr>" + 
 
-							"<tr><td>GeldKarte: </td><td>" + payment_ep_geldkarte + "</td></tr>" + 
-							"<tr><td>Kundenkarten: </td><td>" + payment_account_cards + "</td></tr>" + 
-							"<tr><td>Karte: </td><td>" + payment_electronic_purses + "</td></tr>" + 
+							payment_ep_geldkarte +
+							payment_account_cards + 
+							payment_electronic_purses +
 							
 							"</table></div>" + 
 							"<div class='infoblock'><table>" + 
 							"<tr><td>Ref: </td><td>" + ref + "</td></tr>" + 
-							"<tr><td>Notiz: </td><td>" + note + "</td></tr>" + 
+							note + 
 							"</table></div>" + 
 							"<br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>" 
 							;
