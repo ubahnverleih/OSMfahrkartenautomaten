@@ -181,9 +181,9 @@
 
 					
 					if (amenity!=""){
-						if (operator=="") operator = "<i><b>fehlt</i></b>";
-						if (payment_coins=="") payment_coins = "<i><b>fehlt</i></b>"; 
-						if (payment_notes=="") payment_notes = "<i><b>fehlt</i></b>";
+						if (operator=="") operator = "<i><b>unbekannt</i></b>";
+						if (payment_coins=="") payment_coins = "<i><b>unbekannt</i></b>"; 
+						if (payment_notes=="") payment_notes = "<i><b>unbekannt</i></b>";
 
 						//Dinge die nur angezeigt werden, wenn sie getaggt sind:
 						if (payment_ep_geldkarte!="") payment_ep_geldkarte = "<tr><td>GeldKarte: </td><td>" + payment_ep_geldkarte + "</td></tr>";
@@ -193,8 +193,7 @@
 						if (note!="") note = "<tr><td>Notiz: </td><td>" + note + "</td></tr>";
 						if (fixme!="") note = "<tr><td>Fixme: </td><td>" + fixme + "</td></tr>";
 
-						//if (payment_electronic_purses=="") payment_electronic_purses = "<i><b>fehlt</i></b>";
-						if (ref=="") ref = "<i><b>fehlt</i></b>";
+						if (ref=="") ref = "<i><b>unbekannt</i></b>";
 						
 						EleText = 
 							"<b>Betreiber: " + operator + "</b><br>" + 
