@@ -123,6 +123,7 @@
 					var amenity = "";
 					var operator = "";
 					var ref = "";
+					var covered = "";
 					var payment_coins = "";
 					var payment_electronic_purses = "";
 					var payment_notes = "";
@@ -133,6 +134,7 @@
 					var note = "";
 					var fixme = "";
 					var costommarker = "";
+					var level = "";
 					
 					$(this).find('tag').each(function(){
 						EleKey = $(this).attr("k");
@@ -149,6 +151,10 @@
 						if ((EleKey=="ref"))
 						{
 							ref = EleValue;
+						}
+						if ((EleKey=="covered"))
+						{
+							covered = EleValue;
 						}
 						if ((EleKey=="payment:coins"))
 						{
@@ -186,6 +192,10 @@
 						{
 							fixme = EleValue;
 						}
+						if ((EleKey=="level"))
+						{
+							level = EleValue;
+						}
 						
 					});
 
@@ -203,8 +213,10 @@
 						if (payment_debit_card!="") payment_debit_card = "<tr><td>EC-Karte: </td><td>" + yesno(payment_debit_card) + "</td></tr>";
 						if (payment_girocard!="") payment_girocard = "<tr><td>EC-Karte: </td><td>" + yesno(payment_girocard) + "</td></tr>";
 
+						if (covered!="") covered = "<tr><td>Überdacht: </td><td>" + yesno(covered) + "</td></tr>";
 						if (note!="") note = "<tr><td>Notiz: </td><td>" + note + "</td></tr>";
 						if (fixme!="") note = "<tr><td>Fixme: </td><td>" + fixme + "</td></tr>";
+						if (level!="") level = "<tr><td>Stockwerk: </td><td>" + stockwerk(level) + "</td></tr>";
 
 						if (ref=="") ref = "<i><b>unbekannt</i></b>";
 						
@@ -223,6 +235,8 @@
 							
 							"</table></div>" + 
 							"<div class='infoblock'><table>" + 
+							level +
+							covered +
 							"<tr><td>Ref: </td><td>" + ref + "</td></tr>" + 
 							note + 
 							"</table></div>" + 
