@@ -23,10 +23,10 @@ function stockwerk(value){
 	if (isNumeric(value)){
 		if (value == "0")
 			result = "Erdgeschoss";
-		if (parseInt(value)>0)
+		if (parseFloat(value)>0)
 			result = value + ". Obergeschoss";
-		if (parseInt(value)<0)
-			result = parseInt(value)*-1 + ". Untergeschoss";
+		if (parseFloat(value)<0)
+			result = parseFloat(value)*-1 + ". Untergeschoss";
 		}
 	else {
 		result = value;
