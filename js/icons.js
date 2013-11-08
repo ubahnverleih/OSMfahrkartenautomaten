@@ -28,6 +28,39 @@ var DVBfixicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+
+var RNVicon = L.icon({
+	iconUrl: './img/operator/rnv.png',
+	iconRetinaUrl: './img/operator/rnv@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+var RSAGicon = L.icon({
+	iconUrl: './img/operator/RSAG.png',
+	iconRetinaUrl: './img/operator/RSAG@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+var magdeburgicon = L.icon({
+	iconUrl: './img/operator/magdeburg.png',
+	iconRetinaUrl: './img/operator/magdeburg@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+
+
 var StdUnknown = L.icon({
 	iconUrl: './img/operator/unknown.png',
 	iconRetinaUrl: './img/operator/unknown@2x.png',
