@@ -51,7 +51,8 @@ function preparseOperatorName(operator){
 }
 
 function getMarkerIcon(parsedOperator){
-	var result = StdIcon;
+	var result = StdUnknown;
+	if (parsedOperator == "<i><b>unbekannt</i></b>") result = StdIcon;
 	if (parsedOperator == "deutsche bahn") result = DBicon;
 	if (parsedOperator == "DVB_to_fix") result = DVBfixicon;
 	if (parsedOperator == "DVB_right") result = DVBicon;
