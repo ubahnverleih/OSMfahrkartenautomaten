@@ -11,6 +11,7 @@
 		<script src="js/geo.js" type="text/javascript"></script>
 		<script src="leaflet/plugins/leaflet-hash/leaflet-hash.js"></script>
 		<script src="js/gears_init.js" type="text/javascript"></script>
+		<script src="js/icons.js" type="text/javascript"></script>
 		<script src="js/parse_scripts.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			
@@ -247,12 +248,13 @@
 						if($.inArray(EleID, MarkerArray)==-1)
 						{
 							var markerLocation = new L.LatLng(EleLat,EleLon);
-							var Icon = new L.icon({
+							/*var Icon = new L.icon({
 								iconUrl: "./leaflet/images/marker-icon"+costommarker+".png",
 								iconSize: [25, 41],
 								iconAnchor:   [12, 41],
 								popupAnchor:  [0, -42]
-							});
+							});*/
+							var Icon = getMarkerIcon(preparseOperatorName(operator));
 							var marker = new L.Marker(markerLocation,{icon : Icon});
 							
 							if(EleText!="")
