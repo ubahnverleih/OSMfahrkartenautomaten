@@ -1,3 +1,7 @@
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function yesno (value){
 	var result;
 	var lowerValue = value.toLowerCase();
@@ -16,15 +20,16 @@ function yesno (value){
 
 function stockwerk(value){
 	var result;
-	switch (value) {
-		case "0":
+	if (isNumeric(value)){
+		if (value == "0")
 			result = "Erdgeschoss";
-			break;
-		case "-1":
-			result = "1. Untergeschoss";
-			break;
-		default:
-			result = value + ". Stockwerk";
+		if (parseInt(value)>0)
+			result = value + ". Obergeschoss";
+		if (parseInt(value)<0)
+			result = parseInt(value)*-1 + ". Untergeschoss";
+		}
+	else {
+		result = value;
 	}
 	return result;
 }
