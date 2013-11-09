@@ -136,6 +136,7 @@
 					var fixme = "";
 					var costommarker = "";
 					var level = "";
+					var wheelchair = "";
 					
 					$(this).find('tag').each(function(){
 						EleKey = $(this).attr("k");
@@ -197,6 +198,10 @@
 						{
 							level = EleValue;
 						}
+						if ((EleKey=="wheelchair"))
+						{
+							wheelchair = EleValue;
+						}
 						
 					});
 
@@ -218,6 +223,7 @@
 						if (note!="") note = "<tr><td>Notiz: </td><td>" + note + "</td></tr>";
 						if (fixme!="") note = "<tr><td>Fixme: </td><td>" + fixme + "</td></tr>";
 						if (level!="") level = "<tr><td>Stockwerk: </td><td>" + stockwerk(level) + "</td></tr>";
+						if (wheelchair!="") wheelchair = "<tr><td>Rollstuhlgeeignet: </td><td>" + yesno(wheelchair) + "</td></tr>";
 
 						if (ref=="") ref = "<i><b>unbekannt</i></b>";
 						
@@ -237,8 +243,9 @@
 							"</table></div>" + 
 							"<div class='infoblock'><table>" + 
 							level +
+							wheelchair +
 							covered +
-							"<tr><td>Ref: </td><td>" + ref + "</td></tr>" + 
+							"<tr><td>Automatennummer: </td><td>" + ref + "</td></tr>" + 
 							note + 
 							"</table></div>" + 
 							"<br><a href='#' onclick='openinJOSM(\""+EleType+"\",\""+EleID+"\")'>edit in JOSM</a>" 

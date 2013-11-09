@@ -12,6 +12,9 @@ function yesno (value){
 		case "no":
 			result = "nein";
 			break;
+		case "limited":
+			result = "eingeschränkt";
+			break;
 		default:
 			result = value;
 	}
