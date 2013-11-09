@@ -1,6 +1,6 @@
 var DBicon = L.icon({
 	iconUrl: './img/operator/db_ag2.png',
-	iconRetinaUrl: './img/operator/db_a2@2x.png',
+	iconRetinaUrl: './img/operator/db_ag2@2x.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
