@@ -40,7 +40,7 @@ function stockwerk(value){
 function preparseOperatorName(operator){
 	var result = operator;
 	var operator=operator.toLowerCase();
-	
+
 	//Operators
 	var DeutscheBahn = ['deutsche bahn', 'deutsche bahn ag', 'db', 'db ag', 'db bahn', 'dbag', 'db regio ag', 'db regio', 'db station&service', 'db station & service', 'db station&service ag', 'deutsche bahn (db)'];
 	var DVB_to_fix = ['dvb ag', 'dvb', 'dresdner verkehrsbetriebe ag'];
@@ -48,6 +48,7 @@ function preparseOperatorName(operator){
 	var RNV = ['rnv', 'rhein-neckar-verkehr gmbh', 'rhein-neckar-verkehr'];
 	var RSAG = ['rsag', 'rostocker straßenbahn ag', 'rostocker straßenbahn'];
 	var magdeburg = ['magdeburger verkehrsbetriebe gmbh & co. kg', 'magdeburger verkehrsbetriebe gmbh', 'magdeburger verkehrsbetriebe'];
+	var CVAG = ['cvag', 'chemnitzer verkehrs-ag'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -55,6 +56,7 @@ function preparseOperatorName(operator){
 	if (RNV.indexOf(operator)>-1) result = 'rnv';
 	if (RSAG.indexOf(operator)>-1) result = 'rsag';
 	if (magdeburg.indexOf(operator)>-1) result = 'magdeburg';
+	if (CVAG.indexOf(operator)>-1) result = 'CVAG';
 
 	return result;
 }
@@ -68,6 +70,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "rnv") result = RNVicon;
 	if (parsedOperator == "rsag") result = RSAGicon;
 	if (parsedOperator == "magdeburg") result = magdeburgicon;
+	if (parsedOperator == "CVAG") result = CVAGicon;
 
 	return result;
 }
