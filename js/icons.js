@@ -79,6 +79,16 @@ var KVVicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var SSBicon = L.icon({
+	iconUrl: './img/operator/SSB.png',
+	iconRetinaUrl: './img/operator/SSB@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 
 
 var StdUnknown = L.icon({
