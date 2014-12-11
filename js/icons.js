@@ -69,6 +69,16 @@ var CVAGicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var KVVicon = L.icon({
+	iconUrl: './img/operator/KVV.png',
+	iconRetinaUrl: './img/operator/KVV@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 
 
 var StdUnknown = L.icon({
