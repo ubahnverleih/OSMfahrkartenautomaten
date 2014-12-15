@@ -49,6 +49,8 @@ function preparseOperatorName(operator){
 	var RSAG = ['rsag', 'rostocker straßenbahn ag', 'rostocker straßenbahn'];
 	var magdeburg = ['magdeburger verkehrsbetriebe gmbh & co. kg', 'magdeburger verkehrsbetriebe gmbh', 'magdeburger verkehrsbetriebe'];
 	var CVAG = ['cvag', 'chemnitzer verkehrs-ag'];
+	var KVV = ['kvv', 'karlsruher verkehrsverbund'];
+	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -57,6 +59,8 @@ function preparseOperatorName(operator){
 	if (RSAG.indexOf(operator)>-1) result = 'rsag';
 	if (magdeburg.indexOf(operator)>-1) result = 'magdeburg';
 	if (CVAG.indexOf(operator)>-1) result = 'CVAG';
+	if (KVV.indexOf(operator)>-1) result = 'KVV';
+	if (SSB.indexOf(operator)>-1) result = 'SSB';
 
 	return result;
 }
@@ -71,6 +75,8 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "rsag") result = RSAGicon;
 	if (parsedOperator == "magdeburg") result = magdeburgicon;
 	if (parsedOperator == "CVAG") result = CVAGicon;
+	if (parsedOperator == "KVV") result = KVVicon;
+	if (parsedOperator == "SSB") result = SSBicon;
 
 	return result;
 }
