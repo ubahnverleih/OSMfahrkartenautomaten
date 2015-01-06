@@ -89,6 +89,15 @@ var SSBicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var EVAGicon = L.icon({
+	iconUrl: './img/operator/EVAG.png',
+	iconRetinaUrl: './img/operator/EVAG@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
 
 
 var StdUnknown = L.icon({
