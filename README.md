@@ -4,6 +4,14 @@
 
 Diese Karte zeigt Fahrkartenautomaten in [Openstreetmap](http://osm.org). Es werden Betreiber, Zahlungsmöglichkeiten, Refs, Notizen und fixmes angezeigt.
 
+## Operator
+
+Weitere Operator können hinzugefügt werden. Das aufwendigste daran ist das zeichnen des Icons. Dabei hilft die Icon-Vorlage unter `./img/operator/icon_vorlage.svg`.
+
+Ein bisschen vorsichtig sollte man bei den Abkürzungen der Verkehrsunternehmen sein, da eine Abkürzung oft mehrere Betreiber bezeichnet.
+
+### Doppelte Betreiberbezeichnungen
+* EVAG bezeichnet sowohl "Essener Verkehrs-AG" als auch "Erfurter Verkehrsbetriebe AG"
 
 ## License
 MIT-License

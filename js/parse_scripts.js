@@ -41,7 +41,7 @@ function preparseOperatorName(operator){
 	var result = operator;
 	var operator=operator.toLowerCase();
 
-	//Operators
+	//Operators lowercase
 	var DeutscheBahn = ['deutsche bahn', 'deutsche bahn ag', 'db', 'db ag', 'db bahn', 'dbag', 'db regio ag', 'db regio', 'db station&service', 'db station & service', 'db station&service ag', 'deutsche bahn (db)', 'db vertrieb', 'db vertrieb gmbh'];
 	var DVB_to_fix = ['dvb ag', 'dvb', 'dresdner verkehrsbetriebe ag'];
 	var DVB_right = ['dresdner verkehrsbetriebe'];
