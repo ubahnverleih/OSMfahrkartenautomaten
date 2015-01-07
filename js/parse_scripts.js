@@ -52,6 +52,7 @@ function preparseOperatorName(operator){
 	var KVV = ['kvv', 'karlsruher verkehrsverbund'];
 	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
 	var EVAG = ['evag', 'essener verkehrs-ag'];
+	var cottbusverkehr = ['cottbusverkehr gmbh'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -63,6 +64,7 @@ function preparseOperatorName(operator){
 	if (KVV.indexOf(operator)>-1) result = 'KVV';
 	if (SSB.indexOf(operator)>-1) result = 'SSB';
 	if (EVAG.indexOf(operator)>-1) result = 'EVAG';
+	if (cottbusverkehr.indexOf(operator)>-1) result = 'cottbusverkehr';
 
 	return result;
 }
@@ -80,6 +82,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "KVV") result = KVVicon;
 	if (parsedOperator == "SSB") result = SSBicon;
 	if (parsedOperator == "EVAG") result = EVAGicon;
+	if (parsedOperator == "cottbusverkehr") result = cottbusverkehricon;
 
 	return result;
 }
