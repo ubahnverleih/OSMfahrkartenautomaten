@@ -53,6 +53,7 @@ function preparseOperatorName(operator){
 	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
 	var EVAG = ['evag', 'essener verkehrs-ag'];
 	var cottbusverkehr = ['cottbusverkehr gmbh'];
+	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -65,6 +66,7 @@ function preparseOperatorName(operator){
 	if (SSB.indexOf(operator)>-1) result = 'SSB';
 	if (EVAG.indexOf(operator)>-1) result = 'EVAG';
 	if (cottbusverkehr.indexOf(operator)>-1) result = 'cottbusverkehr';
+	if (goerlitz.indexOf(operator)>-1) result = 'goerlitz';
 
 	return result;
 }
@@ -83,6 +85,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "SSB") result = SSBicon;
 	if (parsedOperator == "EVAG") result = EVAGicon;
 	if (parsedOperator == "cottbusverkehr") result = cottbusverkehricon;
+	if (parsedOperator == "goerlitz") result = goerlitzicon;
 
 	return result;
 }
