@@ -55,6 +55,7 @@ function preparseOperatorName(operator){
 	var cottbusverkehr = ['cottbusverkehr gmbh'];
 	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
+	var vlexx = ['vlexx', 'vlexx gmbh'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -69,6 +70,7 @@ function preparseOperatorName(operator){
 	if (cottbusverkehr.indexOf(operator)>-1) result = 'cottbusverkehr';
 	if (goerlitz.indexOf(operator)>-1) result = 'goerlitz';
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
+	if (vlexx.indexOf(operator)>-1) result = 'vlexx';
 
 	return result;
 }
@@ -89,6 +91,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "cottbusverkehr") result = cottbusverkehricon;
 	if (parsedOperator == "goerlitz") result = goerlitzicon;
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;
+	if (parsedOperator == "vlexx") result = vlexxicon;
 
 	return result;
 }
