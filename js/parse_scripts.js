@@ -51,7 +51,7 @@ function preparseOperatorName(operator){
 	var CVAG = ['cvag', 'chemnitzer verkehrs-ag'];
 	var KVV = ['kvv', 'karlsruher verkehrsverbund'];
 	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
-	var EVAG = ['evag', 'essener verkehrs-ag'];
+	var EssenerVAG = ['essener verkehrs-ag']; // EVAG is also used in Erfurt
 	var cottbusverkehr = ['cottbusverkehr gmbh'];
 	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
@@ -65,7 +65,7 @@ function preparseOperatorName(operator){
 	if (CVAG.indexOf(operator)>-1) result = 'CVAG';
 	if (KVV.indexOf(operator)>-1) result = 'KVV';
 	if (SSB.indexOf(operator)>-1) result = 'SSB';
-	if (EVAG.indexOf(operator)>-1) result = 'EVAG';
+	if (EssenerVAG.indexOf(operator)>-1) result = 'EssenerVAG';
 	if (cottbusverkehr.indexOf(operator)>-1) result = 'cottbusverkehr';
 	if (goerlitz.indexOf(operator)>-1) result = 'goerlitz';
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
@@ -85,7 +85,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "CVAG") result = CVAGicon;
 	if (parsedOperator == "KVV") result = KVVicon;
 	if (parsedOperator == "SSB") result = SSBicon;
-	if (parsedOperator == "EVAG") result = EVAGicon;
+	if (parsedOperator == "EssenerVAG") result = EssenerVAGicon;
 	if (parsedOperator == "cottbusverkehr") result = cottbusverkehricon;
 	if (parsedOperator == "goerlitz") result = goerlitzicon;
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;

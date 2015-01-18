@@ -89,9 +89,9 @@ var SSBicon = L.icon({
 	shadowSize: [41, 41]
 });
 
-var EVAGicon = L.icon({
-	iconUrl: './img/operator/EVAG.png',
-	iconRetinaUrl: './img/operator/EVAG@2x.png',
+var EssenerVAGicon = L.icon({
+	iconUrl: './img/operator/EssenerVAG.png',
+	iconRetinaUrl: './img/operator/EssenerVAG@2x.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
