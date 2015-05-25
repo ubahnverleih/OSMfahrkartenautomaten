@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<h1>Fahrkartenautomatenauswertung Dresden</h1>
-		<p><a href="https://twitter.com/DVBAG/status/398873000260673536">Die DVB hat in Dresden wohl 145 Fahrkartenautomaten</a>. Hier eine Auswertung über die OverpassAPI. Gezählt werden alle Fahrkartenautomaten mit "operator=Dresdner Verkehrsbetriebe"</p>
+		<p><a href="https://twitter.com/DVBAG/status/398873000260673536">Die DVB hat in Dresden wohl 145 Fahrkartenautomaten</a>. <a href="https://twitter.com/DVBAG/status/602848041972924417"></a>(oder doch nur 142?)</a> Hier eine Auswertung über die OverpassAPI. Gezählt werden alle Fahrkartenautomaten mit "operator=Dresdner Verkehrsbetriebe"</p>
 		<p>Wir haben uns geeinigt das operator Tag auf "Dresdner Verkehrsbetriebe" zu vereinheitlichen. "DVB AG", "DVB", "Dresdner Verkehrsbetriebe AG" werden aber hier auch mit ausgewertet.</p>
 		<p><a href="./">Die Karte mit den Automaten gibts hier</a></p>
 		<h2>Auswertung</h2>
@@ -23,7 +23,7 @@
 	<script>
 
 		function auswertung(anzahl){
-			$('#auswertung').html(anzahl + " von 145 DVB-Automaten");
+			$('#auswertung').html(anzahl + " von 145 (142?) DVB-Automaten");
 		}
 
 		function parseOSM(data){
