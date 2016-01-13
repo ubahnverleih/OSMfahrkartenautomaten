@@ -139,9 +139,9 @@ var vlexxicon = L.icon({
 	shadowSize: [41, 41]
 });
 
-var swuicon = L.icon({
-	iconUrl: './img/operator/swu.png',
-	iconRetinaUrl: './img/operator/swu@2x.png',
+var SWUicon = L.icon({
+	iconUrl: './img/operator/SWU.png',
+	iconRetinaUrl: './img/operator/SWU@2x.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
