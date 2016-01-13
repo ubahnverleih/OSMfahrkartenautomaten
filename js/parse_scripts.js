@@ -56,6 +56,7 @@ function preparseOperatorName(operator){
 	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
 	var vlexx = ['vlexx', 'vlexx gmbh'];
+	var SWU = ['swu', 'swu verkehr'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -71,6 +72,7 @@ function preparseOperatorName(operator){
 	if (goerlitz.indexOf(operator)>-1) result = 'goerlitz';
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
 	if (vlexx.indexOf(operator)>-1) result = 'vlexx';
+	if (SWU.indexOf(operator)>-1) result = 'SWU';
 
 	return result;
 }
@@ -92,6 +94,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "goerlitz") result = goerlitzicon;
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;
 	if (parsedOperator == "vlexx") result = vlexxicon;
+	if (parsedOperator == "SWU") result = SWUicon;
 
 	return result;
 }
