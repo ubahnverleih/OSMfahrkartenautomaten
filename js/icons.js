@@ -99,6 +99,16 @@ var EVAGicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var BOGESTRAicon = L.icon({
+	iconUrl: './img/operator/BOGESTRA.png',
+	iconRetinaUrl: './img/operator/BOGESTRA@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 var cottbusverkehricon = L.icon({
 	iconUrl: './img/operator/cottbusverkehr.png',
 	iconRetinaUrl: './img/operator/cottbusverkehr@2x.png',
