@@ -52,6 +52,7 @@ function preparseOperatorName(operator){
 	var KVV = ['kvv', 'karlsruher verkehrsverbund'];
 	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
 	var EVAG = ['evag', 'essener verkehrs-ag'];
+	var BOGESTRA = ['bogestra', 'bochum-gelsenkirchener straßenbahnen ag'];
 	var cottbusverkehr = ['cottbusverkehr gmbh'];
 	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
@@ -68,6 +69,7 @@ function preparseOperatorName(operator){
 	if (KVV.indexOf(operator)>-1) result = 'KVV';
 	if (SSB.indexOf(operator)>-1) result = 'SSB';
 	if (EVAG.indexOf(operator)>-1) result = 'EVAG';
+	if (BOGESTRA.indexOf(operator)>-1) result = 'BOGESTRA';
 	if (cottbusverkehr.indexOf(operator)>-1) result = 'cottbusverkehr';
 	if (goerlitz.indexOf(operator)>-1) result = 'goerlitz';
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
@@ -90,6 +92,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "KVV") result = KVVicon;
 	if (parsedOperator == "SSB") result = SSBicon;
 	if (parsedOperator == "EVAG") result = EVAGicon;
+	if (parsedOperator == "BOGESTRA") result = BOGESTRAicon;
 	if (parsedOperator == "cottbusverkehr") result = cottbusverkehricon;
 	if (parsedOperator == "goerlitz") result = goerlitzicon;
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;
