@@ -40,6 +40,7 @@ function stockwerk(value){
 function preparseOperatorName(operator){
 	var result = operator;
 	var operator=operator.toLowerCase();
+	var operator=operator.trim();
 
 	//Operators lowercase
 	var DeutscheBahn = ['deutsche bahn', 'deutsche bahn ag', 'db', 'db ag', 'db bahn', 'dbag', 'db regio ag', 'db regio', 'db station&service', 'db station & service', 'db station&service ag', 'deutsche bahn (db)', 'db vertrieb', 'db vertrieb gmbh'];
@@ -58,6 +59,8 @@ function preparseOperatorName(operator){
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
 	var vlexx = ['vlexx', 'vlexx gmbh'];
 	var SWU = ['swu', 'swu verkehr'];
+	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
+	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -75,6 +78,8 @@ function preparseOperatorName(operator){
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
 	if (vlexx.indexOf(operator)>-1) result = 'vlexx';
 	if (SWU.indexOf(operator)>-1) result = 'SWU';
+	if (BVG.indexOf(operator)>-1) result = 'BVG';
+	if (sbahnberlin.indexOf(operator)>-1) result = 'sbahnberlin';
 
 	return result;
 }
@@ -98,6 +103,8 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;
 	if (parsedOperator == "vlexx") result = vlexxicon;
 	if (parsedOperator == "SWU") result = SWUicon;
+	if (parsedOperator == "BVG") result = BVGIcon;
+	if (parsedOperator == "sbahnberlin") result = S_Bahn_BerlinIcon;
 
 	return result;
 }

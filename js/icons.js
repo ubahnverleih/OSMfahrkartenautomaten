@@ -149,6 +149,26 @@ var vlexxicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var BVGIcon = L.icon({
+	iconUrl: './img/operator/BVG.png',
+	iconRetinaUrl: './img/operator/BVG@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+var S_Bahn_BerlinIcon = L.icon({
+	iconUrl: './img/operator/S_Bahn_Berlin.png',
+	iconRetinaUrl: './img/operator/S_Bahn_Berlin@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 var SWUicon = L.icon({
 	iconUrl: './img/operator/SWU.png',
 	iconRetinaUrl: './img/operator/SWU@2x.png',
