@@ -158,6 +158,12 @@
 						{
 							covered = EleValue;
 						}
+						if ((EleKey=="payment:cash"))
+						{
+							// Don't overwrite variables if already set
+							payment_coins = (payment_coins=="" ? EleValue : payment_coins);
+							payment_notes = (payment_notes=="" ? EleValue : payment_notes);
+						}
 						if ((EleKey=="payment:coins"))
 						{
 							payment_coins = EleValue;
