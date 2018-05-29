@@ -59,6 +59,7 @@ function preparseOperatorName(operator){
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
 	var vlexx = ['vlexx', 'vlexx gmbh'];
 	var SWU = ['swu', 'swu verkehr'];
+	var Saarbahn = ['saarbahn', 'saarbahn gmbh'];
 	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
 	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
 
@@ -78,6 +79,7 @@ function preparseOperatorName(operator){
 	if (hamburghochbahn.indexOf(operator)>-1) result = 'hamburghochbahn';
 	if (vlexx.indexOf(operator)>-1) result = 'vlexx';
 	if (SWU.indexOf(operator)>-1) result = 'SWU';
+	if (Saarbahn.indexOf(operator)>-1) result = 'Saarbahn';
 	if (BVG.indexOf(operator)>-1) result = 'BVG';
 	if (sbahnberlin.indexOf(operator)>-1) result = 'sbahnberlin';
 
@@ -103,6 +105,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "hamburghochbahn") result = hamburghochbahnicon;
 	if (parsedOperator == "vlexx") result = vlexxicon;
 	if (parsedOperator == "SWU") result = SWUicon;
+	if (parsedOperator == "Saarbahn") result = SaarbahnIcon;
 	if (parsedOperator == "BVG") result = BVGIcon;
 	if (parsedOperator == "sbahnberlin") result = S_Bahn_BerlinIcon;
 
