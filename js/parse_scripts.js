@@ -63,6 +63,7 @@ function preparseOperatorName(operator){
 	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
 	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
 	var uestra = ['üstra', 'uestra'];
+	var gvh = ['gvh', 'großraumverkehr hannover'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -84,6 +85,7 @@ function preparseOperatorName(operator){
 	if (BVG.indexOf(operator)>-1) result = 'BVG';
 	if (sbahnberlin.indexOf(operator)>-1) result = 'sbahnberlin';
 	if (uestra.indexOf(operator)>-1) result = 'Üstra';
+	if (gvh.indexOf(operator)>-1) result = 'GVH';
 
 	return result;
 }
@@ -111,6 +113,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "BVG") result = BVGIcon;
 	if (parsedOperator == "sbahnberlin") result = S_Bahn_BerlinIcon;
 	if (parsedOperator == "Üstra") result = uestraicon;
+	if (parsedOperator == "GVH") result = GVHicon;
 
 	return result;
 }
