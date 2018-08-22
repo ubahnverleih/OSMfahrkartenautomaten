@@ -62,6 +62,7 @@ function preparseOperatorName(operator){
 	var Saarbahn = ['saarbahn', 'saarbahn gmbh'];
 	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
 	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
+	var uestra = ['üstra', 'uestra'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
 	if (DVB_to_fix.indexOf(operator)>-1) result = 'DVB_to_fix';
@@ -82,6 +83,7 @@ function preparseOperatorName(operator){
 	if (Saarbahn.indexOf(operator)>-1) result = 'Saarbahn';
 	if (BVG.indexOf(operator)>-1) result = 'BVG';
 	if (sbahnberlin.indexOf(operator)>-1) result = 'sbahnberlin';
+	if (uestra.indexOf(operator)>-1) result = 'Üstra';
 
 	return result;
 }
@@ -108,6 +110,7 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "Saarbahn") result = SaarbahnIcon;
 	if (parsedOperator == "BVG") result = BVGIcon;
 	if (parsedOperator == "sbahnberlin") result = S_Bahn_BerlinIcon;
+	if (parsedOperator == "Üstra") result = uestraicon;
 
 	return result;
 }
