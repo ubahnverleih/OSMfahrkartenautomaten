@@ -139,6 +139,16 @@ var hamburghochbahnicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var uestraicon = L.icon({
+	iconUrl: './img/operator/Uestra.png',
+	iconRetinaUrl: './img/operator/Uestra@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 var vlexxicon = L.icon({
 	iconUrl: './img/operator/vlexx.png',
 	iconRetinaUrl: './img/operator/vlexx@2x.png',
