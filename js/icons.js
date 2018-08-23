@@ -140,7 +140,7 @@ var hamburghochbahnicon = L.icon({
 });
 
 var uestraicon = L.icon({
-	iconUrl: './img/operator/Uestra.png',
+	iconUrl: './img/operator/uestra.png',
 	iconRetinaUrl: './img/operator/Uestra@2x.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
