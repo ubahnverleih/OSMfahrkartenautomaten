@@ -79,6 +79,36 @@ var KVVicon = L.icon({
 	shadowSize: [41, 41]
 });
 
+var VBKicon = L.icon({
+	iconUrl: './img/operator/VBK.png',
+	iconRetinaUrl: './img/operator/VBK@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+var AVGicon = L.icon({
+	iconUrl: './img/operator/AVG.png',
+	iconRetinaUrl: './img/operator/AVG@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
+var FLIXicon = L.icon({
+	iconUrl: './img/operator/FLIX.png',
+	iconRetinaUrl: './img/operator/FLIX@2x.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowUrl: './leaflet/images/marker-shadow.png',
+	shadowSize: [41, 41]
+});
+
 var SSBicon = L.icon({
 	iconUrl: './img/operator/SSB.png',
 	iconRetinaUrl: './img/operator/SSB@2x.png',

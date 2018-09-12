@@ -51,6 +51,9 @@ function preparseOperatorName(operator){
 	var magdeburg = ['magdeburger verkehrsbetriebe gmbh & co. kg', 'magdeburger verkehrsbetriebe gmbh', 'magdeburger verkehrsbetriebe'];
 	var CVAG = ['cvag', 'chemnitzer verkehrs-ag'];
 	var KVV = ['kvv', 'karlsruher verkehrsverbund'];
+	var AVG = ['avg', 'albtal-verkehrs-gesellschaft mbh'];
+	var VBK = ['vbk', 'verkehrsbetriebe karlsruhe gmbh'];
+	var FLIX = ['flix', 'flixmobility gmbh', 'flixbus'];
 	var SSB = ['ssb', 'ssb ag', 'stuttgarter straßenbahnen', 'stuttgarter straßenbahnen ag', 'stuttgarter straßenbahnen (ssb)'];
 	var EVAG = ['evag', 'essener verkehrs-ag'];
 	var BOGESTRA = ['bogestra', 'bochum-gelsenkirchener straßenbahnen ag'];
@@ -73,6 +76,9 @@ function preparseOperatorName(operator){
 	if (magdeburg.indexOf(operator)>-1) result = 'magdeburg';
 	if (CVAG.indexOf(operator)>-1) result = 'CVAG';
 	if (KVV.indexOf(operator)>-1) result = 'KVV';
+	if (VBK.indexOf(operator)>-1) result = 'VBK';
+	if (AVG.indexOf(operator)>-1) result = 'AVG';
+	if (FLIX.indexOf(operator)>-1) result = 'FLIX';
 	if (SSB.indexOf(operator)>-1) result = 'SSB';
 	if (EVAG.indexOf(operator)>-1) result = 'EVAG';
 	if (BOGESTRA.indexOf(operator)>-1) result = 'BOGESTRA';
@@ -101,6 +107,9 @@ function getMarkerIcon(parsedOperator){
 	if (parsedOperator == "magdeburg") result = magdeburgicon;
 	if (parsedOperator == "CVAG") result = CVAGicon;
 	if (parsedOperator == "KVV") result = KVVicon;
+	if (parsedOperator == "AVG") result = AVGicon;
+	if (parsedOperator == "VBK") result = VBKicon;
+	if (parsedOperator == "FLIX") result = FLIXicon;
 	if (parsedOperator == "SSB") result = SSBicon;
 	if (parsedOperator == "EVAG") result = EVAGicon;
 	if (parsedOperator == "BOGESTRA") result = BOGESTRAicon;
