@@ -1,0 +1,30 @@
+{
+    "data_format": 1,
+    "data_url": "https://ubahnverleih.github.io/OSMfahrkartenautomaten/taginfo.json",
+    "project": {
+        "name": "Fahrkartenautomaten in OSM",
+        "description": "Diese Karte zeigt Fahrkartenautomaten in Openstreetmap",
+		"project_url": "https://ubahnverleih.github.io/OSMfahrkartenautomaten/",
+        "doc_url": "https://github.com/ubahnverleih/OSMfahrkartenautomaten"
+    },
+    "tags": [
+{ "key": "vending", "value": "public_transport_tickets", "object_types": [ "node" ], "description": "Overpass API request" },
+{ "key": "amenity",  "object_types": [ "node" ], "description": "required" },
+{ "key": "operator",  "object_types": [ "node" ], "description": "icon" },
+{ "key": "ref",  "object_types": [ "node" ] },
+{ "key": "covered",  "object_types": [ "node" ] },
+{ "key": "payment:cash",  "object_types": [ "node" ] },
+{ "key": "payment:coins",  "object_types": [ "node" ] },
+{ "key": "payment:electronic_purses",  "object_types": [ "node" ] },
+{ "key": "payment:debit_cards",  "object_types": [ "node" ] },
+{ "key": "payment:girocard",  "object_types": [ "node" ] },
+{ "key": "payment:notes",  "object_types": [ "node" ] },
+{ "key": "payment:ep_geldkarte",  "object_types": [ "node" ] },
+{ "key": "payment:account_cards",  "object_types": [ "node" ] },
+{ "key": "note",  "object_types": [ "node" ] },
+{ "key": "fixme",  "object_types": [ "node" ] },
+{ "key": "level",  "object_types": [ "node" ] },
+{ "key": "wheelchair",  "object_types": [ "node" ] }
+	
+	]
+}
