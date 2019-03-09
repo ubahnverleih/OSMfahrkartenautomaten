@@ -132,6 +132,7 @@
 					var payment_account_cards = "";
 					var payment_debit_card = "";
 					var payment_girocard = "";
+					var payment_cless = "";
 					var note = "";
 					var fixme = "";
 					var costommarker = "";
@@ -208,6 +209,8 @@
 						{
 							wheelchair = EleValue;
 						}
+						if(EleKey == "payment:contactless")
+							payment_cless = EleValue;
 						
 					});
 
@@ -222,8 +225,9 @@
 						if (payment_ep_geldkarte!="") payment_ep_geldkarte = "<tr><td>GeldKarte: </td><td>" + yesno(payment_ep_geldkarte) + "</td></tr>";
 						if (payment_account_cards!="") payment_account_cards = "<tr><td>Kundenkarte: </td><td>" + yesno(payment_account_cards) + "</td></tr>";
 						if (payment_electronic_purses!="") payment_electronic_purses = "<tr><td>Karte: </td><td>" + yesno(payment_electronic_purses) + "</td></tr>";
-						if (payment_debit_card!="") payment_debit_card = "<tr><td>EC-Karte: </td><td>" + yesno(payment_debit_card) + "</td></tr>";
-						if (payment_girocard!="") payment_girocard = "<tr><td>EC-Karte: </td><td>" + yesno(payment_girocard) + "</td></tr>";
+						if (payment_debit_card!="") payment_debit_card = "<tr><td>Girokarte: </td><td>" + yesno(payment_debit_card) + "</td></tr>";
+						if (payment_girocard!="") payment_girocard = "<tr><td>Girokarte: </td><td>" + yesno(payment_girocard) + "</td></tr>";
+						if (payment_cless != "") payment_cless = "<tr><td>Kontaktlos: </td><td>" + yesno(payment_cless) + "</td></tr>";
 
 						if (covered!="") covered = "<tr><td>Überdacht: </td><td>" + yesno(covered) + "</td></tr>";
 						if (note!="") note = "<tr><td>Notiz: </td><td>" + note + "</td></tr>";
@@ -245,6 +249,7 @@
 							payment_electronic_purses +
 							payment_debit_card +
 							payment_girocard +
+							payment_cless +
 							
 							"</table></div>" + 
 							"<div class='infoblock'><table>" + 
