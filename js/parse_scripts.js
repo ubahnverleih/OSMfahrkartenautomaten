@@ -65,7 +65,7 @@ function preparseOperatorName(operator){
 	var Saarbahn = ['saarbahn', 'saarbahn gmbh'];
 	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
 	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
-	var uestra = ['üstra', 'uestra'];
+	var uestra = ['üstra', 'uestra', 'üstra hannoversche verkehrsbetriebe ag'];
 	var gvh = ['gvh', 'großraumverkehr hannover'];
 
 	if (DeutscheBahn.indexOf(operator)>-1) result = 'deutsche bahn';
