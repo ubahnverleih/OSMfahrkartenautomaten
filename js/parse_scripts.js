@@ -61,7 +61,7 @@ function preparseOperatorName(operator){
 	var goerlitz = ['verkehrsgesellschaft görlitz', 'verkehrsgesellschaft görlitz gmbh'];
 	var hamburghochbahn = ['hamburger hochbahn ag', 'hamburger hochbahn'];
 	var vlexx = ['vlexx', 'vlexx gmbh'];
-	var SWU = ['swu', 'swu verkehr', 'SWU Stadtwerke Ulm/Neu-Ulm GmbH'];
+	var SWU = ['swu', 'swu verkehr', 'swu stadtwerke ulm/neu-ulm gmbh'];
 	var Saarbahn = ['saarbahn', 'saarbahn gmbh'];
 	var BVG = ['bvg', 'berliner verkehrsbetriebe'];
 	var sbahnberlin = ['s-bahn berlin', 's-bahn berlin gmbh'];
